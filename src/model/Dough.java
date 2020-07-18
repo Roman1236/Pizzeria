@@ -25,7 +25,7 @@ public class Dough extends Ingredient{
 
         ingredients.add(ingredient);
         this.setFreeSize(this.getFreeSize() - ingredient.getSize());
-        this.setPrice(this.getPrice()+ingredient.getPrice());
+        this.setPrice(this.getPrice() + ingredient.getPrice());
         return true;
     }
 
