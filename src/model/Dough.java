@@ -19,7 +19,7 @@ public class Dough extends Ingredient{
     }
 
     public boolean addIngredient(Ingredient ingredient) {
-        if (ingredient==null || ingredient.getSize() > this.getFreeSize()) {
+        if (ingredient == null || ingredient.getSize() > this.getFreeSize()) {
             return false;
         }
 
@@ -36,7 +36,7 @@ public class Dough extends Ingredient{
 
         ingredients.remove(ingredient);
         this.setFreeSize(this.getFreeSize() + ingredient.getSize());
-        this.setPrice(this.getPrice()-ingredient.getPrice());
+        this.setPrice(this.getPrice() - ingredient.getPrice());
         return true;
     }
 
@@ -56,12 +56,13 @@ public class Dough extends Ingredient{
         this.freeSize = freeSize;
     }
 
-    public double findSumPrice(){
+    public double findSumPrice() {
         double tempPrice=0;
-        if(ingredients!=null)
+        if(ingredients != null)
         for (Ingredient ingredient : ingredients) {
             tempPrice += ingredient.getPrice();
         }
+
         return tempPrice;
     }
 }
