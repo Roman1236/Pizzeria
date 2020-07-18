@@ -1,22 +1,37 @@
 package model;
 
 public abstract class Ingredient {
-    private int price;
-    private String Name;
+    private double price;
+    private String name;
+    private int size;
 
-    public int getPrice() {
+    public Ingredient(double price, String name, int size) {
+        this.price = price;
+        this.name = name;
+        this.size = size;
+    }
+
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 }

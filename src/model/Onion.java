@@ -3,6 +3,11 @@ package model;
 public class Onion extends Ingredient{
     private int pungency;
 
+    public Onion(double price, String name, int size, int pungency) {
+        super(price, name, size);
+        this.pungency = pungency;
+    }
+
     public int getPungency() {
         return pungency;
     }
