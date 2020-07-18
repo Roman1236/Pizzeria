@@ -3,18 +3,17 @@ package model;
 import java.util.ArrayList;
 
 public class Pizza {
-
     private int price;
+    private ArrayList<Ingredient> ingredients;
 
-    ArrayList<Ingredient> ingredients;
-
-    public double evaluatePrice(){
+    public void evaluatePrice() {
         int tmpPrice = 0;
+
         for (Ingredient ingredient: ingredients) {
             tmpPrice += ingredient.getPrice();
         }
+
         setPrice(tmpPrice);
-        return getPrice();
     }
 
     void addIngredient(Ingredient ingredient){
@@ -36,7 +35,6 @@ public class Pizza {
     public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
-
 
     public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;

@@ -1,11 +1,9 @@
 package model;
 
 public class Dough extends Ingredient{
-
-    private enum doughType{
+    private enum DoughType {
         NEW_YORK,
         NEAPOLITAN,
         SICILIAN
     }
-
 }

@@ -1,7 +1,6 @@
 package model;
 
 public class Meat extends Ingredient{
-
     private int roasting;
 
     public int getRoasting() {

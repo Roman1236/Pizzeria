@@ -1,7 +1,6 @@
 package model;
 
 public abstract class Ingredient {
-
     private int price;
     private String Name;
 
@@ -20,7 +19,4 @@ public abstract class Ingredient {
     public void setName(String name) {
         Name = name;
     }
-
-
-
 }
