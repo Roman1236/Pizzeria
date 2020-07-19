@@ -15,7 +15,6 @@ public class Dough extends Ingredient{
         super(price, name, size);
         this.ingredients = ingredients;
         this.setPrice(price + this.findSumPrice());
-
     }
 
     public boolean addIngredient(Ingredient ingredient) {
@@ -57,10 +56,12 @@ public class Dough extends Ingredient{
     }
 
     public double findSumPrice() {
-        double tempPrice=0;
-        if(ingredients != null)
-        for (Ingredient ingredient : ingredients) {
-            tempPrice += ingredient.getPrice();
+        double tempPrice = 0;
+
+        if (ingredients != null) {
+            for (Ingredient ingredient : ingredients) {
+                tempPrice += ingredient.getPrice();
+            }
         }
 
         return tempPrice;
