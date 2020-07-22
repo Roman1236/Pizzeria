@@ -15,6 +15,8 @@ public class Dough extends Ingredient{
         super(price, name, size);
         this.ingredients = ingredients;
         this.setPrice(price + this.findSumPrice());
+        this.setIngredients(ingredients);
+        this.setDough(true);
     }
 
     public boolean addIngredient(Ingredient ingredient) {
@@ -39,14 +41,6 @@ public class Dough extends Ingredient{
         return true;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
-
     public int getFreeSize() {
         return freeSize;
     }
@@ -58,8 +52,15 @@ public class Dough extends Ingredient{
     public double findSumPrice() {
         double tempPrice = 0;
 
-        if (ingredients != null) {
-            for (Ingredient ingredient : ingredients) {
+        if (ingredients == null) {
+            return tempPrice;
+        }
+
+        for (Ingredient ingredient : ingredients) {
+            if (ingredient.getIsDough()) {
+                tempPrice += this.findSumPrice();
+            }
+            else {
                 tempPrice += ingredient.getPrice();
             }
         }
