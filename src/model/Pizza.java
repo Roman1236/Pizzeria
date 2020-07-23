@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Pizza {
     private Dough baseDough;
 
@@ -9,7 +7,7 @@ public class Pizza {
         this.baseDough = baseDough;
     }
 
-    public double findSumPrice() {
+    public double findPizzaPrice() {
         return this.baseDough.findSumPrice();
     }
 }

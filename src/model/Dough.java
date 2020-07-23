@@ -19,7 +19,6 @@ public class Dough extends Ingredient {
     public Dough(int price, String name, int size, ArrayList<Ingredient> ingredients) {
         super(price, name, size);
         this.ingredients = ingredients;
-        this.setPrice(price + this.findSumPrice());
         freeSize = this.getSize();
     }
 

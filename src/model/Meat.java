@@ -1,6 +1,6 @@
 package model;
 
-public class Meat extends Ingredient{
+public class Meat extends Ingredient {
     private int roasting;
 
     public Meat(double price, String name, int size, int roasting) {
