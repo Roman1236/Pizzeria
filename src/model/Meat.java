@@ -6,9 +6,9 @@ public class Meat extends Ingredient{
     public Meat(double price, String name, int size, int roasting) {
         super(price, name, size);
         this.roasting = roasting;
-        this.setIngredients(null);
-        this.setDough(false);
     }
+
+    public double findSumPrice() { return this.getPrice(); }
 
     public int getRoasting() {
         return roasting;

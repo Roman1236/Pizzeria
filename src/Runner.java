@@ -15,6 +15,6 @@ public class Runner {
         dough2.addIngredient(dough1);
 
         Pizza govnoPizzaDliaYarika_z_VerySpecificTastes = new Pizza(dough2);
-        System.out.println(govnoPizzaDliaYarika_z_VerySpecificTastes.findPrice());
+        System.out.println(govnoPizzaDliaYarika_z_VerySpecificTastes.findSumPrice());
     }
 }

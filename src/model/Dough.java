@@ -2,21 +2,25 @@ package model;
 
 import java.util.ArrayList;
 
-public class Dough extends Ingredient{
-    private ArrayList<Ingredient> ingredients;
-    private int freeSize = this.getSize();
-    private enum DoughType {
-        NEW_YORK,
-        NEAPOLITAN,
-        SICILIAN
+enum DoughType {
+    NEW_YORK,
+    NEAPOLITAN,
+    SICILIAN;
+
+    private DoughType() {
     }
+}
+
+public class Dough extends Ingredient {
+    private ArrayList<Ingredient> ingredients;
+    private int freeSize;
+
 
     public Dough(int price, String name, int size, ArrayList<Ingredient> ingredients) {
         super(price, name, size);
         this.ingredients = ingredients;
         this.setPrice(price + this.findSumPrice());
-        this.setIngredients(ingredients);
-        this.setDough(true);
+        freeSize = this.getSize();
     }
 
     public boolean addIngredient(Ingredient ingredient) {
@@ -26,7 +30,6 @@ public class Dough extends Ingredient{
 
         ingredients.add(ingredient);
         this.setFreeSize(this.getFreeSize() - ingredient.getSize());
-        this.setPrice(this.getPrice() + ingredient.getPrice());
         return true;
     }
 
@@ -37,7 +40,6 @@ public class Dough extends Ingredient{
 
         ingredients.remove(ingredient);
         this.setFreeSize(this.getFreeSize() + ingredient.getSize());
-        this.setPrice(this.getPrice() - ingredient.getPrice());
         return true;
     }
 
@@ -50,19 +52,14 @@ public class Dough extends Ingredient{
     }
 
     public double findSumPrice() {
-        double tempPrice = 0;
+        double tempPrice = this.getPrice();
 
-        if (ingredients == null) {
+        if (ingredients == null || ingredients.isEmpty())  {
             return tempPrice;
         }
 
         for (Ingredient ingredient : ingredients) {
-            if (ingredient.getIsDough()) {
-                tempPrice += this.findSumPrice();
-            }
-            else {
-                tempPrice += ingredient.getPrice();
-            }
+            tempPrice += ingredient.findSumPrice();
         }
 
         return tempPrice;

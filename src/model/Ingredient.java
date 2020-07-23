@@ -6,29 +6,13 @@ public abstract class Ingredient {
     private double price;
     private String name;
     private int size;
-    private ArrayList<Ingredient> ingredients;
-    private boolean isDough;
     public Ingredient(double price, String name, int size) {
         this.price = price;
         this.name = name;
         this.size = size;
     }
 
-    public boolean getIsDough() {
-        return isDough;
-    }
-
-    public void setDough(boolean dough) {
-        isDough = dough;
-    }
-
-    public ArrayList<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
+    public abstract double findSumPrice();
 
     public double getPrice() {
         return price;

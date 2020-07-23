@@ -6,9 +6,9 @@ public class Onion extends Ingredient{
     public Onion(double price, String name, int size, int pungency) {
         super(price, name, size);
         this.pungency = pungency;
-        this.setIngredients(null);
-        this.setDough(false);
     }
+
+    public double findSumPrice() { return this.getPrice(); }
 
     public int getPungency() {
         return pungency;

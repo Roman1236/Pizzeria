@@ -9,7 +9,7 @@ public class Pizza {
         this.baseDough = baseDough;
     }
 
-    public double findPrice() {
-        return this.baseDough.getPrice();
+    public double findSumPrice() {
+        return this.baseDough.findSumPrice();
     }
 }

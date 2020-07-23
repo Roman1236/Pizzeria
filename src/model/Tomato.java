@@ -6,9 +6,9 @@ public class Tomato extends Ingredient{
     public Tomato(int price, String name, int size, int freshness) {
         super(price, name, size);
         this.freshness = freshness;
-        this.setIngredients(null);
-        this.setDough(false);
     }
+
+    public double findSumPrice() { return this.getPrice(); }
 
     public int getFreshness() {
         return freshness;
