@@ -8,7 +8,9 @@ public class Meat extends Ingredient {
         this.roasting = roasting;
     }
 
-    public double findSumPrice() { return this.getPrice(); }
+    public double findSumPrice() {
+        return this.getPrice();
+    }
 
     public int getRoasting() {
         return roasting;

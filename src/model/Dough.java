@@ -2,24 +2,26 @@ package model;
 
 import java.util.ArrayList;
 
-enum DoughType {
-    NEW_YORK,
-    NEAPOLITAN,
-    SICILIAN;
-
-    private DoughType() {
-    }
-}
-
 public class Dough extends Ingredient {
+    public enum DoughType {
+        NEW_YORK,
+        NEAPOLITAN,
+        SICILIAN
+    }
+
+    private DoughType type;
     private ArrayList<Ingredient> ingredients;
     private int freeSize;
 
-
-    public Dough(int price, String name, int size, ArrayList<Ingredient> ingredients) {
+    public Dough(int price, String name, int size, DoughType type, ArrayList<Ingredient> ingredients) {
         super(price, name, size);
+        this.type = type;
         this.ingredients = ingredients;
-        freeSize = this.getSize();
+        this.freeSize = this.getSize();
+    }
+
+    public Dough(int price, String name, int size, DoughType type) {
+        this(price, name, size, type, new ArrayList<>());
     }
 
     public boolean addIngredient(Ingredient ingredient) {

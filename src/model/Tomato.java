@@ -8,7 +8,9 @@ public class Tomato extends Ingredient {
         this.freshness = freshness;
     }
 
-    public double findSumPrice() { return this.getPrice(); }
+    public double findSumPrice() {
+        return this.getPrice();
+    }
 
     public int getFreshness() {
         return freshness;

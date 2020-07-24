@@ -8,7 +8,9 @@ public class Onion extends Ingredient {
         this.pungency = pungency;
     }
 
-    public double findSumPrice() { return this.getPrice(); }
+    public double findSumPrice() {
+        return this.getPrice();
+    }
 
     public int getPungency() {
         return pungency;

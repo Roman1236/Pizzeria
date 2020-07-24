@@ -4,6 +4,7 @@ public abstract class Ingredient {
     private double price;
     private String name;
     private int size;
+
     public Ingredient(double price, String name, int size) {
         this.price = price;
         this.name = name;
